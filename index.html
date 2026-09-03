@@ -1,324 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mercado Livre & Afiliada Wonder Shop</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AirClair — Pure Air</title>
+  <!-- Load common web fonts used in the original design -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-    }
-    /* HEADER */
-    header {
-      background-color: #ffe600;
-      border-bottom: 3px solid #002d72;
-    }
-    .header-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 16px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .header-left img,
-    .header-center img,
-    .header-right img {
-      height: 120px;
-      width: auto;
-      object-fit: contain;
-    }
-    .header-center {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-center h1 {
-      font-size: 35px;
-      font-weight: bold;
-      color: #002d72;
-      margin: 0;
-      text-align: center;
+    /* Reset */
+    p { margin: 0; padding: 0; }
+
+    /* Map the exported classes to real fonts and maintain original sizes/colors */
+    .ft00{font-size:26px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft01{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft02{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft03{font-size:59px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft04{font-size:79px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft05{font-size:15px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft06{font-size:105px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#ffffff;}
+    .ft07{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
+    .ft08{font-size:21px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft09{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.701961;}
+    .ft010{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.701961;}
+    .ft011{font-size:15px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft012{font-size:105px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft013{font-size:15px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
+    .ft014{font-size:49px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#000000;opacity:0.000000;}
+    .ft015{font-size:51px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft016{font-size:25px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft017{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.800000;}
+    .ft018{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.800000;}
+    .ft019{font-size:30px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
+    .ft020{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
+    .ft021{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
+    .ft022{font-size:20px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
+    .ft023{font-size:105px;line-height:143px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
+
+    /* Container mimics the original fixed canvas but is centered and scrollable */
+    #page1-div{position:relative; width:100%; max-width:1620px; margin:0 auto; background-color:#A0A0A0;}
+    #page1-div .canvas{position:relative; width:1620px; height:7076px; margin:0 auto;}
+
+    /* CTA button style */
+    .cta-button{
+      display:inline-block;
+      padding:16px 28px;
+      background:#2f8bfd;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(47,139,253,0.28);
     }
 
-    /* SECTION BASE */
-    .section {
-      max-width: 1400px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    .section-title {
-      background-color: #002d72;
-      color: #ffe600;
-      padding: 14px;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 8px 8px 0 0;
+    /* Make absolute positioned text scale a little on smaller screens */
+    @media (max-width: 1024px){
+      #page1-div .canvas{transform:scale(0.7); transform-origin:top left;}
     }
 
-    /* PRODUCT GRID */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      background: #fff;
-      border: 2px solid #e0e0e0;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      padding: 20px;
-    }
-    .product-card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px;
-      transition: 0.2s;
-    }
-    .product-card img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-    .card-content { text-align: center; }
-    .card-content h3 { font-size: 16px; margin-bottom: 6px; }
-    .card-content p { font-size: 13px; margin-bottom: 6px; }
-    .price-original { font-size: 13px; text-decoration: line-through; color: #999; }
-    .discount { font-size: 13px; font-weight: bold; margin-left: 6px; color: #e74c3c; }
-    .price-final { font-size: 14px; font-weight: bold; margin: 6px 0; color: #f57f17; }
-    .buy-button {
-      font-size: 13px;
-      padding: 6px 12px;
-      background-color: #002d72;
-      color: #ffe600;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .buy-button:hover { background-color: #0044aa; }
-
-    /* FORMULÁRIO MAILCHIMP */
-.section.newsletter {
-  padding: 40px 20px;
-}
-
-.section.newsletter .section-title {
-  background-color: #ffe600; /* Faixa amarela */
-  color: #002d72;            /* Texto azul */
-  font-size: 20px;
-  font-weight: bold;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.section.newsletter .container {
-  background-color: #002d72; /* Bloco azul */
-  padding: 30px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;       /* Alinha verticalmente logo e form */
-  justify-content: center;   /* Centraliza horizontalmente */
-  gap: 40px;                 /* Espaço entre logo e formulário */
-}
-
-.section.newsletter .logo img {
-  height: 150px; /* Ajuste conforme sua logo */
-  width: auto;
-}
-
-.section.newsletter form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  width: 100%;
-}
-
-.section.newsletter input,
-.section.newsletter select,
-.section.newsletter button {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.section.newsletter button {
-  background-color: #ffe600; /* Botão amarelo */
-  color: #002d72;            /* Texto azul */
-  font-weight: bold;
-  cursor: pointer;
-}
-.section.newsletter button:hover {
-  background-color: #ffd000;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .section.newsletter .container {
-    flex-direction: column; /* No celular, logo em cima e form abaixo */
-    gap: 20px;
-  }
-  .section.newsletter .logo img {
-    height: 60px;
-  }
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .section.newsletter .logo img {
-    height: 60px;
-  }
-  .section.newsletter form {
-    max-width: 100%; /* Ocupa toda largura no celular */
-  }
-  .section.newsletter .section-title {
-    font-size: 18px;
-    padding: 10px;
-  }
-}
-
-
-    /* RESPONSIVO */
-    @media (max-width: 900px) {
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .product-grid { grid-template-columns: 1fr; }
-      .header-center h1 { font-size: 18px; }
-    }
+    /* Helpful: ensure long page doesn't overflow horizontally on very small devices */
+    html,body{height:100%;}
+    body{background:#A0A0A0;}
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="header-container">
-      <div class="header-left"><img src="logomercadolivre.png" alt="Mercado Livre"></div>
-      <div class="header-center">
-        <h1>Mercado Livre e afiliada Wonder Shop</h1>
-        <img src="logowondershop.png" alt="Wonder Shop">
-      </div>
-      <div class="header-right"><img src="aviaologo.png" alt="Avião"></div>
-    </div>
-  </header>
+  <div id="page1-div">
+    <div class="canvas">
+      <!-- The original export used a background image. The repo didn't include that file, so we point to a placeholder image. Replace the src with your original asset name if you add it to the repo. -->
+      <img width="1620" height="7076" src="https://via.placeholder.com/1620x7076.png?text=AirClair+Background" alt="background image" />
 
-  <!-- SEÇÕES DE PRODUTOS -->
-  <!-- Aqui você mantém todas as seções já criadas: Eletrônicos, Moda Trendy, Decoração, Acessórios -->
-  <!-- Basta colar os blocos que você já tem, sem alterar nada -->
-  <!-- ELETRÔNICOS -->
-  <section class="section">
-    <div class="section-title">Eletrônicos</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_794669-MLA103476925132_012026-F.webp"><div class="card-content"><h3>Projetore 4K</h3><p>Ultra Hd Hy320 Smart Wi-fi 6 Bluetooth Android Cor Preto.</p><span class="price-original">R$ 261,53</span><span class="discount">-10%</span><div class="price-final"></div><a href="https://meli.la/2Wf3iDs" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_807017-MLA91535682558_092025-F.webp"><div class="card-content"><h3>Samsung A17</h3><p>Com Ia, 128gb, 4gb Ram, Câm De 50mp, Tela De 6.7 , Nfc, Ip54 - Preto.</p><span class="price-original">R$ 1.599,00</span><span class="discount">-9%</span><div class="price-final"></div><a href="https://meli.la/1f8gwK5" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_756756-MLA99498288390_112025-F.webp"><div class="card-content"><h3>Galaxy Watch Ultra</h3><p>Samsung Galaxy Watch Ultra 2025 Smartwatch 47mm Lte, Galaxy Ai, Titânio Aeroespacial Titânio PrataSamsung Galaxy Watch Ultra 2025 Smartwatch 47mm Lte.</p><span class="price-original">R$ 4.999,00</span><span class="discount">-60%</span><div class="price-final"></div><a href="https://meli.la/2zzWED9" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_795861-MLA99998895275_112025-F.webp"><div class="card-content"><h3>Headset Game</h3><p>Havit H2002c+u Usb P2 Drivers 53mm Cor Preto E Cor preto e roxo.</p><span class="price-original">R$ 309,00</span><span class="discount">-29%</span><div class="price-final"></div><a href="https://meli.la/2wvKCMg" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_769625-MLA112216248266_062026-F.webp"><div class="card-content"><h3>Caixa de Som</h3><p>Bluetooth Boombox 4 JBL, com AI Sound Boost, até 34h de bateria, IP68 e Áudio Lossless – Preta.</p><span class="price-original">R$ 3.199,00</span><span class="discount">-20%</span><div class="price-final"></div><a href="Bluetooth Boombox 4 JBL, com AI Sound Boost, até 34h de bateria, IP68 e Áudio Lossless – Preta" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_999510-MLA99861915993_112025-F.webp"><div class="card-content"><h3>Caixa de Som</h3><p>Burst 15 Pol. 850w Rms Pulse - Sp404 Preto.</p><span class="price-original">R$ 999,00</span><span class="discount">-14%</span><div class="price-final"></div><a href="https://meli.la/1b2EgzL" class="buy-button">Comprar</a></div></div>
-    </div>
-  </section>
-  <!-- MODA TRENDY -->
-  <section class="section">
-    <div class="section-title">Moda Trendy</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_947582-MLB108560307405_032026-F.webp"><div class="card-content"><h3>Jaqueta Couro</h3><p>Masculino Slim Inverno Frio Sem Capuz.</p><span class="price-original">R$ 149,97,00</span><span class="discount">-00%</span><div class="price-final"></div><a href="https://meli.la/2JwGvvP" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_772974-MLA111620950028_062026-F.webp"><div class="card-content"><h3>Moletom</h3><p>Sem Capuz Gola Redonda Algodão Macio Brasil.</p><span class="price-original">R$ 78,00</span><span class="discount">-5%</span><div class="price-final"></div><a href="https://meli.la/1YDCe1e" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_760647-MLB109554324379_032026-F.webp"><div class="card-content"><h3>Casaco Feminino</h3><p>Teddy Sobretudo Blusa Frio Forrado Com Capuz.</p><span class="price-original">R$ 90,00</span><span class="discount">-13%</span><div class="price-final"></div><a href="https://meli.la/1XJrQy7" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_987056-MLB97994189700_112025-F-calca-cargo-masculina-larga-skatista-streetwear-sarja-p-a-gg.webp"><div class="card-content"><h3>Calça Cargo</h3><p>Masculina Larga Skatista Streetwear Sarja P A Gg.</p><span class="price-original">R$ 78,90</span><span class="discount">-18%</span><div class="price-final"></div><a href="https://meli.la/2NnSRhC" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_620314-MLB84464849188_052025-F-calca-wide-leg-modeladora-dos-sonhos-cintura-alta-premium.webp"><div class="card-content"><h3>Calça Wide Leg</h3><p>Modeladora Dos Sonhos Cintura Alta Premium.</p><span class="price-original">R$ 125,41</span><span class="discount">-16%</span><div class="price-final"></div><a href="https://meli.la/2wuPrg8" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_824417-MLB111941488549_052026-F-kit3-short-futebol-bermuda-masculina-academia-treino-esporte.webp"><div class="card-content"><h3>Kit Short Futebol/h3><p>Bermuda Masculina Academia Treino Esporte.</p><span class="price-original">R$ 139,90</span><span class="discount">-44%</span><div class="price-final"></div><a href="https://meli.la/1ZMuy2t" class="buy-button">Comprar</a></div></div>
-      </div>
-    </section>                                                                                                                        
-   <!-- DECORAÇÃO -->
-  <section class="section">
-    <div class="section-title">Decoração</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_778237-MLA97327658107_112025-F.webp"><div class="card-content"><h3>sofá Retrátil</h3><p>3 Lugares C Molas 1,80m Vegas Suede Cor Preto.</p><span class="price-original">R$ 1.599,00</span><span class="discount">-41%</span><div class="price-final"></div><a href="https://meli.la/1jC3gEr" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_668359-MLA110473535085_042026-F.webp"><div class="card-content"><h3>Conjunto Quatro Cadeiras</h3><p>Charlotte Carraro Nogal Rose.</p><span class="price-original">R$ 1.631,57</span><span class="discount">-48%</span><div class="price-final"></div><a href="https://meli.la/1rdXGMg" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_730997-MLA97917138200_112025-F.webp"><div class="card-content"><h3>Escrivaninha Gamer</h3><p>L Berlim de Canto com 115 cm para Home Office.</p><span class="price-original">R$ 599,00</span><span class="discount">-52%</span><div class="price-final"></div><a href="https://meli.la/2KuEagR" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_921004-MLB108414403083_032026-F.webp"><div class="card-content"><h3>Kit 2 Cadeiras</h3><p>Diamante Linho C/couro Pés Madeira Sala Jantar.</p><span class="price-original">R$ 1.332,99</span><span class="discount">-00%</span><div class="price-final"></div><a href="https://meli.la/2dryi2W" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_698742-MLA99955369551_112025-F.webp"><div class="card-content"><h3>Rack para TV</h3><p>té 65 Polegadas Com Pés Turim Madesa Cor Preto XM6997.</p><span class="price-original">R$ 392,53</span><span class="discount">-23%</span><div class="price-final"></div><a href="https://meli.la/2GTsq4f" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_983929-MLA96072865933_102025-F.webp"><div class="card-content"><h3>cobertor Queen</h3><p>Queen Size Grosso Luxo Cobredom La Carneiro Fofinho Cor Cinza.</p><span class="price-original">R$ 139,00</span><span class="discount">-18%</span><div class="price-final"></div><a href="https://meli.la/2GSt4Hi" class="buy-button">Comprar</a></div></div>
-    </div>
-  </section>
-  <!-- ACESSÓRIOS -->
-  <section class="section">
-    <div class="section-title">Acessórios</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_714982-MLA110837848947_042026-F.webp"><div class="card-content"><h3>pote Hermático</h3><p>Para Ração de Gato e Cachorro com Capacidade de 2,5 Litros.</p><span class="price-original">R$ 47,39</span><span class="discount">-43%</span><div class="price-final"></div><a href="https://meli.la/2zrA5oQ" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_839765-MLA86725262407_062025-F.webp"><div class="card-content"><h3>Pipoqueira</h3><p>Inox Indução Fundo Triplo Allegra 5,6l Tramontina Com tampa Tampa de Vidro com Borda de Silicone 22 cm.</p><span class="price-original">R$ 399,90</span><span class="discount">-00%</span><div class="price-final"></div><a href="https://meli.la/1ZxU9QU" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_699348-MLA95503716072_102025-F.webp"><div class="card-content"><h3>Gedore Ferramentas</h3><p>it Ferramentas C/ Maleta 178 Pçs Gedore Oficina Mecânica.</p><span class="price-original">R$ 1.218,00</span><span class="discount">-5%</span><div class="price-final"></div><a href="https://meli.la/1NCqWCK" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_900432-MLA113518359539_062026-F.webp"><div class="card-content"><h3>Kit Potes</h3><p>Pote De Vidro Marmita Hermético 640ml Freezer Fitness Rishon.</p><span class="price-original">R$ 199,90</span><span class="discount">-49%</span><div class="price-final"></div><a href="https://meli.la/1ogG2V3" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_763607-MLA100052326477_122025-F.webp"><div class="card-content"><h3>Fone de ouvido</h3><p>asenn G9S Bluetooth TWS Gamer Preto com Microfone e LED.</p><span class="price-original">R$ 89,90</span><span class="discount">-56%</span><div class="price-final"></div><a href="https://meli.la/1jcBk5b" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_702598-MLA99992357553_112025-F.webp"><div class="card-content"><h3>Mochila Raqueteira</h3><p>Beach Tennis, Bolsa De Tênis Transversal Para Raquete, Bolsa De Padel Grande Com Compartimento Separado, Antirroubo E Impermeável, Versátil Para Tênis, Badminton, Ytonet 1340 Preto.</p><span class="price-original">R$ 200,00</span><span class="discount">-22%</span><div class="price-final"></div><a href="https://meli.la/31NjG2k" class="buy-button">Comprar</a></div></div>
-    </div>
-  </section>
-   <!-- Pets -->
-  <section class="section">
-    <div class="section-title">Pet Shop</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_675085-MLA110471471788_052026-F.webp"><div class="card-content"><h3>Biosec</h3><p>Tapete Higiênico 50 Unidades (60x55) Descartável Manta Fralda Absorvente Gel Para Cachorro Pet Cão.</p><span class="price-original">R$ 69,90</span><span class="discount">-00%</span><div class="price-final"></div><a href="https://meli.la/1m7eydA" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_905034-MLA107826056416_032026-F.webp"><div class="card-content"><h3>Gran Plus</h3><p>Ração Gran Plus Choice Adultos Sabor Frango E Carne 15kg</p><span class="price-original">R$ 218,46</span><span class="discount">-42%</span><div class="price-final"></div><a href="https://meli.la/2ULvXn6" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_626899-MLB109613059811_032026-F-chocadeira-automatica-20-ovos-kit-automatico-de-agua.webp"><div class="card-content"><h3>Gedore Ferramentas</h3><p>Chocadeira.</p><span class="price-original">R$ 349,00</span><span class="discount">-00%</span><div class="price-final"></div><a href="https://meli.la/2eyJjJR" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_670042-MLA99832738785_112025-F.webp"><div class="card-content"><h3>Quatree Gourmet</h3><p>Ração Gatos Adultos Quatree Gourmet Mix De Carnes 10,1kg.</p><span class="price-original">R$ 221,49</span><span class="discount">-50%</span><div class="price-final"></div><a href="https://meli.la/25UCogH" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_880282-MLA106998038963_022026-F.webp"><div class="card-content"><h3>Ração</h3><p>Formula Natural Fresh Meat Gato Castrado Carne 10,1kg.</p><span class="price-original">R$ 499,00</span><span class="discount">-35%</span><div class="price-final"></div><a href="https://meli.la/2rytUD5" class="buy-button">Comprar</a></div></div>
-      <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_921106-MLB111066859744_052026-F.webp"><div class="card-content"><h3>Kemei</h3><p>Máquina De Acabamento Corta Cabelo Profissional Kemei 2299 P.</p><span class="price-original">R$ 139,00</span><span class="discount">-43%</span><div class="price-final"></div><a href="https://meli.la/21vJ27h" class="buy-button">Comprar</a></div></div>
-    </div>
-  </section>
+      <!-- Original positioned text preserved for now so the page looks like the exported design -->
+      <p style="position:absolute;top:1941px;left:90px;white-space:nowrap" class="ft00">HEPA&#160;13&#160;Filtration</p>
+      <p style="position:absolute;top:2003px;left:90px;white-space:nowrap" class="ft01">Captures</p>
+      <p style="position:absolute;top:2003px;left:158px;white-space:nowrap" class="ft02">&#160;99.97%&#160;</p>
+      <p style="position:absolute;top:2003px;left:224px;white-space:nowrap" class="ft01">of</p>
+      <p style="position:absolute;top:2003px;left:244px;white-space:nowrap" class="ft01">airborne</p>
+      <p style="position:absolute;top:2003px;left:311px;white-space:nowrap" class="ft01">particles</p>
+      <p style="position:absolute;top:2003px;left:401px;white-space:nowrap" class="ft01">small as 0.3</p>
+      <p style="position:absolute;top:2028px;left:90px;white-space:nowrap" class="ft01">microns, including pollen, pet dander, and smoke.</p>
 
-<!-- FORMULÁRIO MAILCHIMP -->
-<section class="section newsletter">
-  <div class="section-title">Assine e fique por dentro! -- Todos os Produtos aqui listados, são Oficiais do Mercado Livre!</div>
-  <div class="container">
-    <div class="logo">
-      <img src="logowondershop.png" alt="Wonder Shop Logo">
-    </div>
+      <p style="position:absolute;top:1941px;left:582px;white-space:nowrap" class="ft00">99.97%&#160;Particle&#160;Removal</p>
 
-    <form action="https://github.us3.list-manage.com/subscribe/post?u=9d408a1bef564e235e7adef20&amp;id=c492db83f9&amp;f_id=002cdde0f0" method="post" target="_blank">
-      <input type="text" name="FNAME" placeholder="Nome">
-      <input type="email" name="EMAIL" placeholder="Email" required>
-      
-      </select>
-    
-      <div id="help-text" style="font-size:16px;color:#fff;margin-top:5px;">
-        Seus dados, serão usados apenas para envio das ofertas do Mercado Livre.
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
+      <p style="position:absolute;top:1941px;left:1074px;white-space:nowrap" class="ft00">Ultra-Quiet&#160;Operation</p>
+
+      <p style="position:absolute;top:2352px;left:90px;white-space:nowrap" class="ft03">HOW&#160;IT&#160;WORKS</p>
+      <p style="position:absolute;top:3482px;left:90px;white-space:nowrap" class="ft04">FEATURES</p>
+
+      <p style="position:absolute;top:6031px;left:433px;white-space:nowrap" class="ft06">CLAIM&#160;YOUR</p>
+      <p style="position:absolute;top:6175px;left:321px;white-space:nowrap" class="ft06">AIRCLAIR&#160;OFFER</p>
+      <p style="position:absolute;top:6376px;left:719px;white-space:nowrap" class="ft07">GET&#160;YOURS&#160;NOW</p>
+
+      <!-- Affiliate CTA button inserted below the GET YOURS NOW text -->
+      <a href="https://www.clickrtrckr.com/JQG2LTF/6T1DGSS/?uid=9574" target="_blank" rel="noopener noreferrer" 
+         style="position:absolute;top:6420px;left:690px;white-space:nowrap;" class="cta-button">Buy Now — Claim Offer</a>
+
+      <p style="position:absolute;top:6699px;left:90px;white-space:nowrap" class="ft08">AirClair</p>
+
+      <p style="position:absolute;top:166px;left:90px;white-space:nowrap" class="ft023">BREATHE<br/>THE<br/>PURITY<br/>YOU<br/>CAN<br/>TRUST</p>
+
+      <p style="position:absolute;top:1224px;left:409px;white-space:nowrap" class="ft015">9&#160;9&#160;.&#160;9&#160;7&#160;%&#160;&#160;&#160;CAPTURE</p>
+      <p style="position:absolute;top:1224px;left:1316px;white-space:nowrap" class="ft015">1&#160;8&#160;&#160;&#160;DECIB</p>
+
+      <p style="position:absolute;top:2566px;left:90px;white-space:nowrap" class="ft05">Step&#160;01</p>
+      <p style="position:absolute;top:2603px;left:90px;white-space:nowrap" class="ft016">Air&#160;Intake</p>
+      <p style="position:absolute;top:2675px;left:90px;white-space:nowrap" class="ft017">panels initiating the multi-stage filtration cycle.</p>
+
+      <p style="position:absolute;top:2566px;left:588px;white-space:nowrap" class="ft05">Step&#160;02</p>
+      <p style="position:absolute;top:2603px;left:588px;white-space:nowrap" class="ft016">Active&#160;Filtration</p>
+
+      <p style="position:absolute;top:2566px;left:1086px;white-space:nowrap" class="ft05">Step&#160;03</p>
+      <p style="position:absolute;top:2603px;left:1086px;white-space:nowrap" class="ft016">Clean&#160;Air&#160;Release</p>
+
+      <p style="position:absolute;top:4417px;left:126px;white-space:nowrap" class="ft019">Smart&#160;Air&#160;Quality&#160;Sensors</p>
+      <p style="position:absolute;top:4464px;left:126px;white-space:nowrap" class="ft020">Real-time monitoring adjusts filtration automatically.</p>
+
+      <p style="position:absolute;top:26px;left:27px;white-space:nowrap" class="ft022">Home &nbsp; Features &nbsp; Reviews</p>
+
+      <p style="position:absolute;top:6968px;left:90px;white-space:nowrap" class="ft05">©&#160;2024&#160; AirClair. All rights reserved.</p>
+    </div>
   </div>
-</section>
-
-<!-- SCRIPT DE CÁLCULO DE PREÇOS -->
-  <script>
-    function calcularPrecoFinal() {
-      const produtos = document.querySelectorAll('.product-card');
-      produtos.forEach(card => {
-        const original = card.querySelector('.price-original');
-        const desconto = card.querySelector('.discount');
-        const final = card.querySelector('.price-final');
-
-        if (original && desconto && final) {
-          const precoOriginal = parseFloat(original.textContent.replace('R$', '').replace(/\./g, '').replace(',', '.'));
-          const percentual = parseFloat(desconto.textContent.replace('-', '').replace('%', ''));
-
-          if (!isNaN(precoOriginal) && !isNaN(percentual)) {
-            const precoFinal = precoOriginal * (1 - percentual / 100);
-            final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
-          }
-        }
-      });
-    }
-    window.onload = calcularPrecoFinal;
-    </script>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/9d408a1bef564e235e7adef20/587a131962a98be0642318d91.js");</script>
 </body>
 </html>
-
-  
