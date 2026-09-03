@@ -1,122 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AirClair — Pure Air</title>
-  <!-- Load common web fonts used in the original design -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <style>
-    /* Reset */
-    p { margin: 0; padding: 0; }
-
-    /* Map the exported classes to real fonts and maintain original sizes/colors */
-    .ft00{font-size:26px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft01{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft02{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft03{font-size:59px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft04{font-size:79px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft05{font-size:15px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft06{font-size:105px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#ffffff;}
-    .ft07{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
-    .ft08{font-size:21px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft09{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.701961;}
-    .ft010{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.701961;}
-    .ft011{font-size:15px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft012{font-size:105px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft013{font-size:15px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
-    .ft014{font-size:49px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#000000;opacity:0.000000;}
-    .ft015{font-size:51px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft016{font-size:25px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft017{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.800000;}
-    .ft018{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;opacity:0.800000;}
-    .ft019{font-size:30px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
-    .ft020{font-size:18px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
-    .ft021{font-size:17px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#ffffff;}
-    .ft022{font-size:20px;font-family:Inter, Roboto, system-ui, -apple-system, sans-serif;color:#465469;}
-    .ft023{font-size:105px;line-height:143px;font-family:Roboto, Inter, system-ui, -apple-system, sans-serif;color:#465469;}
-
-    /* Container mimics the original fixed canvas but is centered and scrollable */
-    #page1-div{position:relative; width:100%; max-width:1620px; margin:0 auto; background-color:#A0A0A0;}
-    #page1-div .canvas{position:relative; width:1620px; height:7076px; margin:0 auto;}
-
-    /* CTA button style */
-    .cta-button{
-      display:inline-block;
-      padding:16px 28px;
-      background:#2f8bfd;
-      color:#fff;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:700;
-      box-shadow:0 6px 18px rgba(47,139,253,0.28);
-    }
-
-    /* Make absolute positioned text scale a little on smaller screens */
-    @media (max-width: 1024px){
-      #page1-div .canvas{transform:scale(0.7); transform-origin:top left;}
-    }
-
-    /* Helpful: ensure long page doesn't overflow horizontally on very small devices */
-    html,body{height:100%;}
-    body{background:#A0A0A0;}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pages Test — AirClair</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;background:#f6f9fc;color:#102a43;display:flex;align-items:center;justify-content:center;height:100vh;margin:0}</style>
 </head>
 <body>
-  <div id="page1-div">
-    <div class="canvas">
-      <!-- The original export used a background image. The repo didn't include that file, so we point to a placeholder image. Replace the src with your original asset name if you add it to the repo. -->
-      <img width="1620" height="7076" src="https://via.placeholder.com/1620x7076.png?text=AirClair+Background" alt="background image" />
-
-      <!-- Original positioned text preserved for now so the page looks like the exported design -->
-      <p style="position:absolute;top:1941px;left:90px;white-space:nowrap" class="ft00">HEPA&#160;13&#160;Filtration</p>
-      <p style="position:absolute;top:2003px;left:90px;white-space:nowrap" class="ft01">Captures</p>
-      <p style="position:absolute;top:2003px;left:158px;white-space:nowrap" class="ft02">&#160;99.97%&#160;</p>
-      <p style="position:absolute;top:2003px;left:224px;white-space:nowrap" class="ft01">of</p>
-      <p style="position:absolute;top:2003px;left:244px;white-space:nowrap" class="ft01">airborne</p>
-      <p style="position:absolute;top:2003px;left:311px;white-space:nowrap" class="ft01">particles</p>
-      <p style="position:absolute;top:2003px;left:401px;white-space:nowrap" class="ft01">small as 0.3</p>
-      <p style="position:absolute;top:2028px;left:90px;white-space:nowrap" class="ft01">microns, including pollen, pet dander, and smoke.</p>
-
-      <p style="position:absolute;top:1941px;left:582px;white-space:nowrap" class="ft00">99.97%&#160;Particle&#160;Removal</p>
-
-      <p style="position:absolute;top:1941px;left:1074px;white-space:nowrap" class="ft00">Ultra-Quiet&#160;Operation</p>
-
-      <p style="position:absolute;top:2352px;left:90px;white-space:nowrap" class="ft03">HOW&#160;IT&#160;WORKS</p>
-      <p style="position:absolute;top:3482px;left:90px;white-space:nowrap" class="ft04">FEATURES</p>
-
-      <p style="position:absolute;top:6031px;left:433px;white-space:nowrap" class="ft06">CLAIM&#160;YOUR</p>
-      <p style="position:absolute;top:6175px;left:321px;white-space:nowrap" class="ft06">AIRCLAIR&#160;OFFER</p>
-      <p style="position:absolute;top:6376px;left:719px;white-space:nowrap" class="ft07">GET&#160;YOURS&#160;NOW</p>
-
-      <!-- Affiliate CTA button inserted below the GET YOURS NOW text -->
-      <a href="https://www.clickrtrckr.com/JQG2LTF/6T1DGSS/?uid=9574" target="_blank" rel="noopener noreferrer" 
-         style="position:absolute;top:6420px;left:690px;white-space:nowrap;" class="cta-button">Buy Now — Claim Offer</a>
-
-      <p style="position:absolute;top:6699px;left:90px;white-space:nowrap" class="ft08">AirClair</p>
-
-      <p style="position:absolute;top:166px;left:90px;white-space:nowrap" class="ft023">BREATHE<br/>THE<br/>PURITY<br/>YOU<br/>CAN<br/>TRUST</p>
-
-      <p style="position:absolute;top:1224px;left:409px;white-space:nowrap" class="ft015">9&#160;9&#160;.&#160;9&#160;7&#160;%&#160;&#160;&#160;CAPTURE</p>
-      <p style="position:absolute;top:1224px;left:1316px;white-space:nowrap" class="ft015">1&#160;8&#160;&#160;&#160;DECIB</p>
-
-      <p style="position:absolute;top:2566px;left:90px;white-space:nowrap" class="ft05">Step&#160;01</p>
-      <p style="position:absolute;top:2603px;left:90px;white-space:nowrap" class="ft016">Air&#160;Intake</p>
-      <p style="position:absolute;top:2675px;left:90px;white-space:nowrap" class="ft017">panels initiating the multi-stage filtration cycle.</p>
-
-      <p style="position:absolute;top:2566px;left:588px;white-space:nowrap" class="ft05">Step&#160;02</p>
-      <p style="position:absolute;top:2603px;left:588px;white-space:nowrap" class="ft016">Active&#160;Filtration</p>
-
-      <p style="position:absolute;top:2566px;left:1086px;white-space:nowrap" class="ft05">Step&#160;03</p>
-      <p style="position:absolute;top:2603px;left:1086px;white-space:nowrap" class="ft016">Clean&#160;Air&#160;Release</p>
-
-      <p style="position:absolute;top:4417px;left:126px;white-space:nowrap" class="ft019">Smart&#160;Air&#160;Quality&#160;Sensors</p>
-      <p style="position:absolute;top:4464px;left:126px;white-space:nowrap" class="ft020">Real-time monitoring adjusts filtration automatically.</p>
-
-      <p style="position:absolute;top:26px;left:27px;white-space:nowrap" class="ft022">Home &nbsp; Features &nbsp; Reviews</p>
-
-      <p style="position:absolute;top:6968px;left:90px;white-space:nowrap" class="ft05">©&#160;2024&#160; AirClair. All rights reserved.</p>
-    </div>
+  <div style="text-align:center;max-width:680px;padding:24px;">
+    <h1 style="margin-bottom:8px">GitHub Pages test page</h1>
+    <p style="margin:0 0 12px">If you see this page, GitHub Pages is successfully serving the repository's index.html from the <strong>main</strong> branch.</p>
+    <p style="margin:0 0 20px">I pushed this minimal test to confirm Pages is building and serving changes. Reload the site after ~30s to verify: <a href="https://air-condition-project.github.io/wonder-shop2026/">https://air-condition-project.github.io/wonder-shop2026/</a></p>
+    <p style="margin:0">When you confirm, I can restore the full AirClair page (or commit it to a branch) — tell me which you prefer.</p>
   </div>
 </body>
 </html>
